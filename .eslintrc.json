@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["standard", "prettier", "plugin:prettier/recommended", "plugin:cypress/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "React": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true,
+    "cy": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks", "cypress"],
+  "rules": {
+    "prettier/prettier": "error",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "no-unused-vars": "warn",
+    "camelcase": "off",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "no-unreachable": "warn",
+    "no-console": "warn",
+    "cypress/unsafe-to-chain-command": "off",
+    "cypress/no-unnecessary-waiting": "off"
+  }
+}

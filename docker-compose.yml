@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  production:
+    container_name: typeahead-production
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    command: sh -c "yarn build && yarn preview --port 8080"
+
+  dev:
+    container_name: typeahead-development
+    build:
+      context: .
+    volumes:
+      - ./:/app/
+      - /app/node_modules
+    ports:
+      - 8081:8081
+    command: sh -c "yarn dev --port 8081"
